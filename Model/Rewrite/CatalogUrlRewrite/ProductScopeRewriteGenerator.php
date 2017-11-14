@@ -47,7 +47,7 @@ class ProductScopeRewriteGenerator
     /**
      * Object registry.
      *
-     * @var ObjectRegistryFactory
+     * @var \Magento\CatalogUrlRewrite\Model\ObjectRegistryFactory
      */
     private $objectRegistryFactory;
 
@@ -89,7 +89,7 @@ class ProductScopeRewriteGenerator
     /**
      * @param StoreViewService $storeViewService
      * @param StoreManagerInterface $storeManager
-     * @param ObjectRegistryFactory $objectRegistryFactory
+     * @param \Magento\CatalogUrlRewrite\Model\ObjectRegistryFactory $objectRegistryFactory
      * @param CanonicalUrlRewriteGenerator $canonicalUrlRewriteGenerator
      * @param CategoriesUrlRewriteGenerator $categoriesUrlRewriteGenerator
      * @param CurrentUrlRewritesRegenerator $currentUrlRewritesRegenerator
@@ -99,7 +99,7 @@ class ProductScopeRewriteGenerator
     public function __construct(
         StoreViewService $storeViewService,
         StoreManagerInterface $storeManager,
-        ObjectRegistryFactory $objectRegistryFactory,
+        \Magento\CatalogUrlRewrite\Model\ObjectRegistryFactory $objectRegistryFactory,
         CanonicalUrlRewriteGenerator $canonicalUrlRewriteGenerator,
         CategoriesUrlRewriteGenerator $categoriesUrlRewriteGenerator,
         CurrentUrlRewritesRegenerator $currentUrlRewritesRegenerator,

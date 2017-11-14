@@ -98,7 +98,7 @@ class ProductUrlRewriteGenerator
         CanonicalUrlRewriteGenerator $canonicalUrlRewriteGenerator,
         CurrentUrlRewritesRegenerator $currentUrlRewritesRegenerator,
         CategoriesUrlRewriteGenerator $categoriesUrlRewriteGenerator,
-        ObjectRegistryFactory $objectRegistryFactory,
+        \Magento\CatalogUrlRewrite\Model\ObjectRegistryFactory $objectRegistryFactory,
         StoreViewService $storeViewService,
         \Magento\Store\Model\StoreManagerInterface $storeManager
     ) {

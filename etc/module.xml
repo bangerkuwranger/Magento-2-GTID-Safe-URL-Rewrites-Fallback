@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Copyright © 2017 Chad A. Carino. All rights reserved.
+ * See LICENSE file for license details.
+ *
+ * @package    Bangerkuwranger/GtidSafeUrlRewriteFallback
+ * @author     Chad A. Carino <artist@chadacarino.com>
+ * @author     Burak Bingollu <burak.bingollu@gmail.com>
+ * @copyright  2017 Chad A. Carino
+ * @license    https://opensource.org/licenses/MIT  MIT License
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Bangerkuwranger_GtidSafeUrlRewriteFallback" setup_version="1.0.0"></module>
+</config>

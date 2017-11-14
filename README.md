@@ -13,8 +13,13 @@ A more permanent solution involving permanent tables is in the works, but this s
 ## Installation
 
 Installation is available via composer. The package name is bangerkuwranger/magento2-gtid-safe-url-rewrite-fallback. Just run these commands at your Magento root:
+
 `composer require bangerkuwranger/magento2-gtid-safe-url-rewrite-fallback`
+
 `php bin/magento module:enable Bangerkuwranger_GtidSafeUrlRewriteFallback`
+
 `php bin/magento setup:upgrade`
+
 `php bin/magento setup:di:compile`
+
 `php bin/magento cache:flush`

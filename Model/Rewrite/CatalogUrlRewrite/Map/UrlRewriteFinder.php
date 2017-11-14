@@ -67,7 +67,7 @@ class UrlRewriteFinder
     public function __construct(
         UrlFinderInterface $urlFinder,
         UrlRewriteFactory $urlRewriteFactory,
-        array $urlRewriteClassNames
+        array $urlRewriteClassNames = []
     ) {
         $this->urlFinder = $urlFinder;
         $this->urlRewriteClassNames = ( !empty($urlRewriteClassNames) ) ? $urlRewriteClassNames : [];

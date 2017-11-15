@@ -21,7 +21,7 @@
         <arguments>
             <argument name="name" xsi:type="string">GTIDSafeRewritesLogger</argument>
             <argument name="handlers"  xsi:type="array">
-                <item name="system" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteTables\Logger\Handler</item>
+                <item name="system" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteFallback\Logger\Handler</item>
             </argument>
         </arguments>
     </type>

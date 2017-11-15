@@ -3,7 +3,7 @@
  * Copyright © 2017 Chad A. Carino. All rights reserved.
  * See LICENSE file for license details.
  *
- * @package    Bangerkuwranger/GtidSafeUrlRewriteTables
+ * @package    Bangerkuwranger/GtidSafeUrlRewriteFallback
  * @author     Chad A. Carino <artist@chadacarino.com>
  * @author     Burak Bingollu <burak.bingollu@gmail.com>
  * @copyright  2017 Chad A. Carino

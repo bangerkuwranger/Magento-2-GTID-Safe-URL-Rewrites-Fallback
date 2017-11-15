@@ -14,6 +14,7 @@ namespace Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRew
 use Magento\UrlRewrite\Model\UrlFinderInterface;
 use Magento\UrlRewrite\Service\V1\Data\UrlRewrite;
 use Magento\UrlRewrite\Service\V1\Data\UrlRewriteFactory;
+use Bangerkuwranger\GtidSafeUrlRewriteFallback\Logger\Logger;
 
 /**
  * Finds specific queried url rewrites identified by specific fields.
@@ -30,6 +31,13 @@ class UrlRewriteFinder
 
     /** Product entity type name */
     const ENTITY_TYPE_PRODUCT = 'product';
+
+    /**
+     * Logger
+     *
+     * @var Logger
+     */
+    public $bklogger;
 
     /**
      * Pool for database maps.
@@ -67,8 +75,10 @@ class UrlRewriteFinder
     public function __construct(
         UrlFinderInterface $urlFinder,
         UrlRewriteFactory $urlRewriteFactory,
+        Logger $bklogger,
         array $urlRewriteClassNames = []
     ) {
+        $this->bklogger = $bklogger;
         $this->urlFinder = $urlFinder;
         $this->urlRewriteClassNames = ( !empty($urlRewriteClassNames) ) ? $urlRewriteClassNames : [];
         $this->urlRewritePrototype = $urlRewriteFactory->create();
@@ -85,6 +95,29 @@ class UrlRewriteFinder
      */
     public function findAllByData($entityId, $storeId, $entityType, $rootCategoryId = null)
     {
+    
+        if ($rootCategoryId
+            && is_numeric($entityId)
+            && is_numeric($storeId)
+            && is_string($entityType)
+            && isset($this->urlRewriteClassNames[$entityType])
+        ) {
+            try {
+                $map = $this->databaseMapPool->getDataMap($this->urlRewriteClassNames[$entityType], $rootCategoryId);
+                if ($map) {
+                    $key = $storeId . '_' . $entityId;
+
+                    return $this->arrayToUrlRewriteObject($map->getData($rootCategoryId, $key));
+                }
+            } catch (\Zend_Db_Statement_Exception $e) {
+                $this->bklogger->prettyLog($e);
+            } catch (\PDOException $e) {
+                $this->bklogger->prettyLog($e);
+            } catch (\Exception $e) {
+                $this->bklogger->prettyLog($e);
+            }
+        }
+        $this->bklogger->prettyLog(new \Exception('SQL instance probably requires GTID consistency. Falling back to deprecated method.'));
         return $this->urlFinder->findAllByData(
             [
                 UrlRewrite::STORE_ID => $storeId,

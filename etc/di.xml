@@ -12,11 +12,7 @@
  */
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\CatalogUrlRewrite\Observer\CategoryProcessUrlRewriteSavingObserver" type="Bangerkuwranger\GtidSafeUrlRewriteFallback\Observer\CategoryProcessUrlRewriteSavingObserver" />
     <preference for="Magento\CatalogUrlRewrite\Model\Product\CurrentUrlRewritesRegenerator" type="Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Product\CurrentUrlRewritesRegenerator" />
     <preference for="Magento\CatalogUrlRewrite\Model\Category\CurrentUrlRewritesRegenerator" type="Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Category\CurrentUrlRewritesRegenerator" />
     <preference for="Magento\CatalogUrlRewrite\Model\Map\UrlRewriteFinder" type="Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Map\UrlRewriteFinder" />
-    <preference for="Magento\CatalogUrlRewrite\Model\CategoryUrlRewriteGenerator" type="Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\CategoryUrlRewriteGenerator" />
-    <preference for="Magento\CatalogUrlRewrite\Model\ProductScopeRewriteGenerator" type="Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\ProductScopeRewriteGenerator" />
-    <preference for="Magento\CatalogUrlRewrite\Model\ProductUrlRewriteGenerator" type="Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\ProductUrlRewriteGenerator" />
 </config>

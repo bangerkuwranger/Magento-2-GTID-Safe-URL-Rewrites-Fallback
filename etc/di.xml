@@ -25,14 +25,19 @@
             </argument>
         </arguments>
     </type>
-    <type name="Magento\CatalogUrlRewrite\Model\Category\CurrentUrlRewritesRegenerator">
+    <type name="Magento\CatalogUrlRewrite\Model\CategoryUrlRewriteGenerator">
     	<arguments>
-    		<argument name="urlRewriteFinder" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Map\UrlRewriteFinder</argument>
+    		<argument name="currentUrlRewritesRegenerator" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Category\CurrentUrlRewritesRegenerator</argument>
     	</arguments>
     </type>
-    <type name="Magento\CatalogUrlRewrite\Model\Product\CurrentUrlRewritesRegenerator">
+    <type name="Magento\CatalogUrlRewrite\Model\ProductUrlRewriteGenerator">
     	<arguments>
-    		<argument name="urlRewriteFinder" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Map\UrlRewriteFinder</argument>
+    		<argument name="currentUrlRewritesRegenerator" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Product\CurrentUrlRewritesRegenerator</argument>
+    	</arguments>
+    </type>
+    <type name="Magento\CatalogUrlRewrite\Model\ProductScopeRewriteGenerator">
+    	<arguments>
+    		<argument name="currentUrlRewritesRegenerator" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Product\CurrentUrlRewritesRegenerator</argument>
     	</arguments>
     </type>
 </config>

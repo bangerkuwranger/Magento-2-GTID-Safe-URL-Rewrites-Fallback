@@ -27,7 +27,7 @@ use Magento\UrlRewrite\Model\MergeDataProviderFactory;
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class CurrentUrlRewritesRegenerator
+class CurrentUrlRewritesRegenerator extends \Magento\CatalogUrlRewrite\Model\Product\CurrentUrlRewritesRegenerator
 {
     /**
      * @var Product

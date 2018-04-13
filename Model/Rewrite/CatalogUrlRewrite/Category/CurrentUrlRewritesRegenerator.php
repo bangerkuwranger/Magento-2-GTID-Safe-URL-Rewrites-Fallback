@@ -14,7 +14,7 @@ namespace Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRew
 use Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\CategoryUrlRewriteGenerator;
 use Magento\UrlRewrite\Model\OptionProvider;
 
-class CurrentUrlRewritesRegenerator
+class CurrentUrlRewritesRegenerator extends \Magento\CatalogUrlRewrite\Model\Category\CurrentUrlRewritesRegenerator
 {
     /** @var \Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator */
     protected $categoryUrlPathGenerator;

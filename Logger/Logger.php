@@ -14,7 +14,7 @@ namespace Bangerkuwranger\GtidSafeUrlRewriteFallback\Logger;
 class Logger extends \Monolog\Logger
 {
 
-    public function prettyLog($message, $file)
+    public function prettyLog($message, $file = null)
     {
         if ($file) {
             $fileName = BP. DIRECTORY_SEPARATOR . 'var' . DIRECTORY_SEPARATOR . 'log'. DIRECTORY_SEPARATOR . $file .'_Request.log';

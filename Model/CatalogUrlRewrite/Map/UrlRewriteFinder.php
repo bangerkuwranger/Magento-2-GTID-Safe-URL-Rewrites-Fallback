@@ -102,7 +102,7 @@ class UrlRewriteFinder extends MageUrlRewriteFinder
     {
     
        
-        $this->bklogger->prettyLog(new \Exception('SQL instance probably requires GTID consistency. Falling back to deprecated method.'));
+        $this->bklogger->prettyLog(new \Exception('SQL instance probably requires GTID consistency. Falling back to deprecated method.'), 'GTID_safe');
         return $this->urlFinder->findAllByData(
             [
                 UrlRewrite::STORE_ID => $storeId,

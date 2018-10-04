@@ -25,19 +25,22 @@
             </argument>
         </arguments>
     </type>
-    <type name="Magento\CatalogUrlRewrite\Model\CategoryUrlRewriteGenerator">
+    <type name="Magento\CatalogUrlRewrite\Model\Category\CurrentUrlRewritesRegenerator">
     	<arguments>
-    		<argument name="currentUrlRewritesRegenerator" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Category\CurrentUrlRewritesRegenerator</argument>
+    		<argument name="urlRewriteFinder" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\CatalogUrlRewrite\Map\UrlRewriteFinder</argument>
     	</arguments>
     </type>
-    <type name="Magento\CatalogUrlRewrite\Model\ProductUrlRewriteGenerator">
+    <type name="Magento\CatalogUrlRewrite\Model\Product\CurrentUrlRewritesRegenerator">
     	<arguments>
-    		<argument name="currentUrlRewritesRegenerator" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Product\CurrentUrlRewritesRegenerator</argument>
+    		<argument name="urlRewriteFinder" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\CatalogUrlRewrite\Map\UrlRewriteFinder</argument>
     	</arguments>
     </type>
-    <type name="Magento\CatalogUrlRewrite\Model\ProductScopeRewriteGenerator">
-    	<arguments>
-    		<argument name="currentUrlRewritesRegenerator" xsi:type="object">Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Product\CurrentUrlRewritesRegenerator</argument>
-    	</arguments>
+    <type name="Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Map\UrlRewriteFinder">
+        <arguments>
+            <argument name="urlRewriteClassNames" xsi:type="array">
+                <item name="product" xsi:type="string">Magento\CatalogUrlRewrite\Model\Map\DataProductUrlRewriteDatabaseMap</item>
+                <item name="category" xsi:type="string">Magento\CatalogUrlRewrite\Model\Map\DataCategoryUrlRewriteDatabaseMap</item>
+            </argument>
+        </arguments>
     </type>
 </config>

@@ -9,7 +9,7 @@
  * @copyright  2017 Chad A. Carino
  * @license    https://opensource.org/licenses/MIT  MIT License
  */
-namespace Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\Rewrite\CatalogUrlRewrite\Map;
+namespace Bangerkuwranger\GtidSafeUrlRewriteFallback\Model\CatalogUrlRewrite\Map;
 
 use Magento\CatalogUrlRewrite\Model\Map\UrlRewriteFinder as MageUrlRewriteFinder;
 use Magento\UrlRewrite\Model\UrlFinderInterface;

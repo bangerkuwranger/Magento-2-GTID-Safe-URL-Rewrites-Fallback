@@ -101,8 +101,8 @@ class UrlRewriteFinder extends MageUrlRewriteFinder
     public function findAllByData($entityId, $storeId, $entityType, $rootCategoryId = null)
     {
     
-       
-        $this->bklogger->prettyLog(new \Exception('SQL instance probably requires GTID consistency. Falling back to deprecated method.'), 'GTID_safe');
+      $logCheck = new \Exception('SQL instance probably requires GTID consistency. Falling back to deprecated method.';
+        $this->bklogger->info($logCheck->getMessage() . "\r\n" . $logCheck->getTraceAsString() . "\r\n" ));
         return $this->urlFinder->findAllByData(
             [
                 UrlRewrite::STORE_ID => $storeId,

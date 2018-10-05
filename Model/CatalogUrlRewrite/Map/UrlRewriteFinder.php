@@ -16,7 +16,6 @@ use Magento\UrlRewrite\Model\UrlFinderInterface;
 use Magento\UrlRewrite\Service\V1\Data\UrlRewrite;
 use Magento\UrlRewrite\Service\V1\Data\UrlRewriteFactory;
 use Magento\CatalogUrlRewrite\Model\Map\DatabaseMapPool;
-use Bangerkuwranger\GtidSafeUrlRewriteFallback\Logger\Logger;
 
 /**
  * Finds specific queried url rewrites identified by specific fields.
@@ -33,13 +32,6 @@ class UrlRewriteFinder extends MageUrlRewriteFinder
 
     /** Product entity type name */
     const ENTITY_TYPE_PRODUCT = 'product';
-
-    /**
-     * Logger
-     *
-     * @var Logger
-     */
-    public $bklogger;
 
     /**
      * Pool for database maps.
@@ -79,10 +71,8 @@ class UrlRewriteFinder extends MageUrlRewriteFinder
     	DatabaseMapPool $databaseMapPool,
         UrlFinderInterface $urlFinder,
         UrlRewriteFactory $urlRewriteFactory,
-        Logger $bklogger,
         array $urlRewriteClassNames = []
     ) {
-        $this->bklogger = $bklogger;
 		$this->databaseMapPool = $databaseMapPool;
         $this->urlFinder = $urlFinder;
         $this->urlRewriteClassNames = ( !empty($urlRewriteClassNames) ) ? $urlRewriteClassNames : [];
@@ -101,8 +91,6 @@ class UrlRewriteFinder extends MageUrlRewriteFinder
     public function findAllByData($entityId, $storeId, $entityType, $rootCategoryId = null)
     {
     
-      $logCheck = new \Exception('SQL instance probably requires GTID consistency. Falling back to deprecated method.';
-        $this->bklogger->info($logCheck->getMessage() . "\r\n" . $logCheck->getTraceAsString() . "\r\n" ));
         return $this->urlFinder->findAllByData(
             [
                 UrlRewrite::STORE_ID => $storeId,

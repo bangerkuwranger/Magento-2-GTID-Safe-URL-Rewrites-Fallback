@@ -1,8 +1,8 @@
 {
     "name": "bangerkuwranger/magento2-gtid-safe-url-rewrite-fallback",
-	"description": "Magento 2 module that forces the category save observer to fall back to a (deprecated) method that doesn't require temporary tables. This allows GTID consistent category saves for Magento v2.1.x",
+	"description": "Magento 2 module that forces the category save/update observers to fall back to a (deprecated) method that doesn't require temporary tables. This allows GTID consistent category saves for Magento v2.1.x",
     "type": "magento2-module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": [
     "MIT"
 	],
